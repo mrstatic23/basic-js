@@ -9,7 +9,7 @@ module.exports = function dateSample(sampleActivity) {
     const activity = +sampleActivity;
 
     if (!isNaN(activity) && activity > 0 && activity !== 9000 && activity !== 15.1) {
-      return Math.ceil(Math.log(MODERN_ACTIVITY / parseInt(sampleActivity)) / (0.693 / HALF_LIFE_PERIOD));
+      return Math.ceil(Math.log(MODERN_ACTIVITY / sampleActivity) / (0.693 / HALF_LIFE_PERIOD));
     }
   }
   return false;
