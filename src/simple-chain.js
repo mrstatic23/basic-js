@@ -7,22 +7,17 @@ const chainMaker = {
   getLength() {
       return this.chain.length;
   },
-  showChain() {
-      // console.log(this.chain)
-  },
   addLink(value) {
-      // console.log(String(value));
       this.chain.push(`( ${String(value) ? String(value) : ''} )`);
 
       return this;
   },
   removeLink(position) {
-      if (typeof position !== 'number' || Number(position) % 1 !== 0 ) {
+      if (typeof position !== 'number' || Number(position) % 1 !== 0 || Number(position - 1) > this.chain.length ) {
           this.chain.length = 0;
           throw Error('Invalid postion value')
       }
 
-      // console.log(position);
       this.chain.splice(position - 1, 1);
 
       return this;
